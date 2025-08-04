@@ -51,6 +51,20 @@ button {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
+.favorito button {
+  margin-top: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.favorito button:hover {
+  background-color: #cc0000;
+}
+
 .favorito img {
   width: 100px;
 }

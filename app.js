@@ -48,18 +48,25 @@ function saveFavorite() {
   }
 }
 
+function deleteFavorite(index) {
+  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+  favoritos.splice(index, 1);
+  localStorage.setItem("favoritos", JSON.stringify(favoritos));
+  updateFavoritesList();
+}
 
 function updateFavoritesList() {
   const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
   const contenedor = document.getElementById("favoritos");
   contenedor.innerHTML = "";
 
-  favoritos.forEach(pokemon => {
+  favoritos.forEach((pokemon, index) => {
     const div = document.createElement("div");
     div.classList.add("favorito");
     div.innerHTML = `
       <h4>${pokemon.name}</h4>
       <img src="${pokemon.image}" alt="${pokemon.name}">
+      <button onclick="deleteFavorite(${index})">Eliminar</button>
     `;
     contenedor.appendChild(div);
   });
