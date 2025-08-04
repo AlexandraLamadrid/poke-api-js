@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poke Api</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Favoritos</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+  <h1>Busca tu Pokémon Favorito</h1>
+
+  <div class="buscador">
+    <input type="text" id="pokemonInput" placeholder="Escribe un nombre de Pokémon">
+    <button onclick="searchPokemon()">Buscar</button>
+  </div>
+
+  <div id="resultado"></div>
+  <button id="guardarBtn" onclick="saveFavorite()" disabled>Guardar como favorito</button>
+
+  <h2>Mis Pokémon Favoritos</h2>
+  <div id="favoritos" class="favoritos-container"></div>
+
+  <script src="app.js"></script>
 </body>
 </html>
